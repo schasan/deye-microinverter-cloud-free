@@ -145,6 +145,7 @@ class Protocol {
             inverter_meta: {
                 rated_power_w: packet.payload.readUInt16BE(129) / 10,
                 mppt_count: packet.payload.readInt8(131),
+                phases: packet.payload.readInt8(132),
 
                 startup_self_check_time: packet.payload.readUInt16BE(243),
                 current_time: Protocol.parseTime(packet.payload.subarray(245, 251)),
